@@ -1,0 +1,63 @@
+C:\Users\Tudor\Desktop\ML_AP2\ML_AP2\.venv\Scripts\python.exe C:\Users\Tudor\Desktop\ML_AP2\ML_AP2\src\main.py
+First 5 rows of the dataset:
+     Location Country    Category  ...  Rating    Revenue  Accommodation_Available
+0  kuBZRkVsAR   India      Nature  ...    1.32   84388.38                      Yes
+1  aHKUXhjzTo     USA  Historical  ...    2.01  802625.60                       No
+2  dlrdYtJFTA  Brazil      Nature  ...    1.42  338777.11                      Yes
+3  DxmlzdGkHK  Brazil  Historical  ...    1.09  295183.60                      Yes
+4  WJCCQlepnz  France    Cultural  ...    1.43  547893.24                       No
+
+[5 rows x 7 columns]
+
+Dataset Info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 5989 entries, 0 to 5988
+Data columns (total 7 columns):
+ #   Column                   Non-Null Count  Dtype
+---  ------                   --------------  -----
+ 0   Location                 5989 non-null   object
+ 1   Country                  5989 non-null   object
+ 2   Category                 5989 non-null   object
+ 3   Visitors                 5989 non-null   int64
+ 4   Rating                   5989 non-null   float64
+ 5   Revenue                  5989 non-null   float64
+ 6   Accommodation_Available  5989 non-null   object
+dtypes: float64(2), int64(1), object(4)
+memory usage: 327.7+ KB
+None
+
+Basic Statistics:
+            Visitors       Rating        Revenue
+count    5989.000000  5989.000000    5989.000000
+mean   501016.089497     3.009347  499479.367253
+std    289783.294978     1.155980  286743.225211
+min      1108.000000     1.000000    1025.810000
+25%    252789.000000     2.010000  251410.450000
+50%    500831.000000     3.000000  494169.350000
+75%    751371.000000     4.010000  742241.240000
+max    999982.000000     5.000000  999999.490000
+
+Training set size: 4791 rows
+Test set size:     1198 rows
+
+--- Linear Regression Performance ---
+MSE: 271.2306
+R^2: 0.0843
+
+--- Random Forest Performance ---
+MSE: 154.4139
+R^2: 0.4787
+
+Chosen Model: Random Forest
+Saved model comparison plot to ../data/graphs/model_comparison.png
+
+Ranking of categories for France (accommodation=Yes, rating=3, visitors=1000):
+1. Nature -> predicted Revenue_per_visitor = 362.06
+2. Urban -> predicted Revenue_per_visitor = 354.80
+3. Historical -> predicted Revenue_per_visitor = 345.23
+4. Beach -> predicted Revenue_per_visitor = 307.76
+5. Cultural -> predicted Revenue_per_visitor = 307.28
+6. Adventure -> predicted Revenue_per_visitor = 306.88
+Saved final ranking plot to ../data/graphs/final_ranking.png
+
+Process finished with exit code 0
